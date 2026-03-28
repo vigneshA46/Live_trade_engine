@@ -33,12 +33,6 @@ class DhanAdapter:
 
         return data
 
-    # -------------------------------
-    # 🔹 1. GENERATE CORRELATION ID
-    # -------------------------------
-    def generate_correlation_id(self, strategy_id: str, run_id: str, action: str):
-        unique = str(uuid.uuid4())[:8]
-        return f"{strategy_id}_{run_id}_{action}_{unique}"
 
     # -------------------------------
     # 🔹 2. PLACE ORDER
@@ -67,6 +61,12 @@ class DhanAdapter:
 
         return data
 
+    # -------------------------------
+    # 🔹 1. GENERATE CORRELATION ID
+    # -------------------------------
+    def generate_correlation_id(self, strategy_id: str, run_id: str, action: str):
+        unique = str(uuid.uuid4())[:8]
+        return f"{strategy_id}_{run_id}_{action}_{unique}"
     # -------------------------------
     # 🔹 3. GET ORDER STATUS
     # -------------------------------
