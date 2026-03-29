@@ -1,6 +1,6 @@
 # executors/angel_executor.py
 
-from brokers.angel_adapter import AngelAdapter
+from brokers.angel import AngelAdapter
 
 async def angel_order(user, signal):
     try:

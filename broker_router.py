@@ -6,6 +6,7 @@ from executors.angel_executor import angel_order
 
 async def route_signal(signal, users):
     tasks = []
+    print("USERS: ",users)
 
     if "dhan" in users:
         tasks.append(execute(users["dhan"], signal, dhan_order))

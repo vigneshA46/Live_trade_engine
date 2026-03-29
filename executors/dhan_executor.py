@@ -1,14 +1,18 @@
 # executors/dhan_executor.py
 
-from brokers.dhan_adapter import DhanAdapter
+from brokers.dhan import DhanAdapter
+from dhan_token import get_access_token
 
 async def dhan_order(user, signal):
     try:
         creds = user["credentials"]
 
+        #print("CREDS:",creds)
+        token= get_access_token()
+
         adapter = DhanAdapter(
             client_id=creds["clientId"],
-            access_token=await get_dhan_token(creds)   # you build this
+            access_token=token   # you build this
         )
 
         qty = signal["quantity"] * user["multiplier"]

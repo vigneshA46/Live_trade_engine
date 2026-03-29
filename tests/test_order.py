@@ -34,13 +34,23 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+import time
+import asyncio
+from strategy_cache import load_users
 from signal_emitter import emit_signal
+from brokers.dhan import DhanAdapter
 
-# when condition matches
+strategy_id = "bbfe888c-60f9-4968-acf1-2320ce69ce8d"
+loop = asyncio.get_event_loop()
+
+load_users(strategy_id)
+
 emit_signal({
-    "strategy_id": "123456",
+    "strategy_id": strategy_id,
     "option": "CE",
     "side": "BUY",
     "quantity": 50,
     "security_id": "45256"
 })
+
+loop.run_until_complete(asyncio.sleep(5))
