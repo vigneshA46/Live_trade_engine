@@ -40,7 +40,7 @@ from strategy_cache import load_users
 from signal_emitter import emit_signal
 from brokers.dhan import DhanAdapter
 
-strategy_id = "bbfe888c-60f9-4968-acf1-2320ce69ce8d"
+strategy_id = "1fff432a-0411-40ff-aefd-c0b0026d5a6d"
 loop = asyncio.get_event_loop()
 
 load_users(strategy_id)
@@ -49,8 +49,10 @@ emit_signal({
     "strategy_id": strategy_id,
     "option": "CE",
     "side": "BUY",
-    "quantity": 50,
-    "security_id": "45256"
+    "quantity": 65,
+    "security_id": "35105",
+    "token": "54722",
+    "symbol": "NIFTY30MAR2626800CE"
 })
 
 loop.run_until_complete(asyncio.sleep(5))
