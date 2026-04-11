@@ -8,9 +8,9 @@ async def angel_order(user, signal):
 
         adapter = AngelAdapter(
             api_key=creds["apiKey"],
-            client_id=creds["clientId"],
-            password=creds["password"],
-            totp_secret=creds["totp"]
+            client_id=creds["clientCode"],
+            password=creds["pin"],
+            totp_secret=creds["totpSecret"]
         )
 
         adapter.login()
@@ -23,6 +23,8 @@ async def angel_order(user, signal):
             side=signal["side"],
             quantity=qty
         )
+
+        print(order_id)
 
         print(f"✅ ANGEL order success {user['user_id']}")
 

@@ -50,9 +50,9 @@ emit_signal({
     "option": "CE",
     "side": "BUY",
     "quantity": 65,
-    "security_id": "35105",
-    "token": "54722",
-    "symbol": "NIFTY30MAR2626800CE"
+    "security_id": "40760",
+    "token": 54792,
+    "symbol": "NIFTY13APR2623500CE"
 })
 
 loop.run_until_complete(asyncio.sleep(5))

@@ -22,6 +22,7 @@ async def dhan_order(user, signal):
             side=signal["side"],
             quantity=qty
         )
+        print(response)
 
         print(f"✅ DHAN order success {user['user_id']}")
 

@@ -12,7 +12,11 @@ from find_security import load_fno_master, find_option_security
 import threading
 from dispatcher import subscribe
 from queue import Queue
+import asyncio
+from strategy_cache import load_users
+from signal_emitter import emit_signal
 from brokers.dhan import DhanAdapter
+
 
 # =========================
 # CONFIG
@@ -70,12 +74,6 @@ telemetry = {
 
 access_token = get_access_token()
 dhan = dhanhq(CLIENT_ID, access_token)
-dhanadapter = DhanAdapter(
-    client_id=CLIENT_ID,
-    access_token=access_token
-)
-
-print('DHAN ADAPTER INITIATED')
 
 
 fno_df=load_fno_master()
@@ -132,7 +130,7 @@ def log_event(leg_name, token, action, price, remark=""):
     except Exception as e:
         print("EVENT LOG ERROR:", e)
 
-
+""" 
 def telemetry_broadcaster():
     while True:
         try:
@@ -167,7 +165,7 @@ def telemetry_broadcaster():
 
 t = threading.Thread(target=telemetry_broadcaster, daemon=True)
 t.start()
-
+ """
 
 def logtradeleg(strategyid, leg, symbol, strike_price, date, token):
     url = "https://dreaminalgo-backend-production.up.railway.app/api/tradelegs/create"
@@ -208,15 +206,6 @@ def log_trade_event(
     pnl,
     cum_pnl
         ):
-
-        response = dhanadapter.place_order(
-        security_id=str(token),     # ⚠️ actual dhan securityId required
-        side=event_type,
-        quantity=lot*65
-        )
-
-        print(response)
-
     payload = {
         "run_id": COMMON_ID,
         "strategy_id": COMMON_ID,
@@ -410,7 +399,7 @@ def handle_leg(name, token, candle, state, ltp):
             state["pnl"] += pnl
             combined_pnl += pnl
 
-            log_trade_event(
+            """ log_trade_event(
                 event_type="EXIT",
                 leg_name=name,
                 token=token,
@@ -422,6 +411,15 @@ def handle_leg(name, token, candle, state, ltp):
                 pnl= state["pnl"],
                 cum_pnl=combined_pnl
                 )
+            
+ """
+            emit_signal({
+                "strategy_id": COMMON_ID,
+                "option": str(name),
+                "side": "SELL",
+                "quantity": state["lots"],
+                "security_id": token,
+                })
 
             state["position"] = False
 

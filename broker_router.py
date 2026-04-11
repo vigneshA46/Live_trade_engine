@@ -11,8 +11,8 @@ async def route_signal(signal, users):
     if "dhan" in users:
         tasks.append(execute(users["dhan"], signal, dhan_order))
 
-    if "angel" in users:
-        tasks.append(execute(users["angel"], signal, angel_order))
+    if "angelone" in users:
+        tasks.append(execute(users["angelone"], signal, angel_order))
 
     await asyncio.gather(*tasks)
 

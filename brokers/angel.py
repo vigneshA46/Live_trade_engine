@@ -69,10 +69,19 @@ class AngelAdapter:
 
             response = self.client.placeOrder(params)
 
-            if not response.get("status"):
-                raise Exception(response.get("message"))
+            # CASE 1: response is string (order_id)
+            if isinstance(response, str):
+                return response
 
-            return response["data"]["orderid"]
+            # CASE 2: response is dict
+            if isinstance(response, dict):
+                if not response.get("status"):
+                    raise Exception(response.get("message"))
+
+                return response.get("data", {}).get("orderid")
+
+            # fallback
+            raise Exception(f"Unexpected response: {response}")
 
         except Exception as e:
             raise Exception(f"Order Failed: {str(e)}")
