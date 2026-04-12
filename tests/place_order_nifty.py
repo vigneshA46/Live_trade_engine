@@ -9,7 +9,7 @@ import hashlib
 
 # 🔐 FROM YOUR URL
 USER_ID = "2505610"
-AUTH_CODE = "VI9IYJBEEHFT3QZZHK5E"
+AUTH_CODE = "LW7FGB52RS2N3BS9LBE4"
 SECRET_KEY = "5xWormtQR5tjK5ZB4Hcfksy3Z2LJ3WLHWBEjoyRegOdNOrp5lKEMOs0kyn3SQErcReitz7ZVmnEBJTJ1rTJE3sDdcCGlFIjJX7c3"   # from developer portal
 
 # 🎯 ORDER CONFIG
@@ -40,8 +40,6 @@ def main():
         return
 
     print("✅ Login successful")
-
-
     
 
     # 3️⃣ Get instrument

@@ -42,7 +42,7 @@ class UpstoxBroker:
         price=0,
         trigger_price=0,
         algo_name="dreamin_algo"
-    ):
+     ):
         try:
             body = upstox_client.PlaceOrderV3Request(
                 quantity=qty,
@@ -96,7 +96,7 @@ class UpstoxBroker:
         offset=0,              # used if OFFSET
         strike=None,           # used if STRIKE
         expiry="current_week"
-    ):
+     ):
         try:
             url = "https://api.upstox.com/v2/instruments/search"
 
@@ -148,3 +148,5 @@ class UpstoxBroker:
 
         except Exception as e:
             return {"status": "error", "message": str(e)}
+
+            

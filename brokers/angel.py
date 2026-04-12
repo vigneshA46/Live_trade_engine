@@ -52,7 +52,7 @@ class AngelAdapter:
         product_type="INTRADAY",
         price=0,
         exchange="NFO"
-    ):
+     ):
         try:
             params = {
                 "variety": "NORMAL",
@@ -96,7 +96,7 @@ class AngelAdapter:
         price=0,
         order_type="LIMIT",
         product_type="INTRADAY"
-    ):
+     ):
         try:
             params = {
                 "variety": "NORMAL",
