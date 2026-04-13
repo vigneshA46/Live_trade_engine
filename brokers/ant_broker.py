@@ -22,7 +22,7 @@ class AntBroker:
 
         self.session = self.trade.get_session_id(check_sum=checksum)
 
-        if self.session.get("stat") != "Ok":
+        if not self.session or not self.session.get("userSession"):
             raise Exception(f"Login failed: {self.session}")
 
         print("Login successful")
