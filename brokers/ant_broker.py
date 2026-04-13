@@ -4,13 +4,16 @@ import hashlib
 
 class AntBroker:
     def __init__(self, user_id, auth_code, secret_key):
+        self.user_id = user_id
+        self.auth_code = auth_code
+        self.secret_key = secret_key
+
         self.trade = TradeHub(
             user_id=user_id,
             auth_code=auth_code,
             secret_key=secret_key
         )
         self.session = None
-
     def login(self):
         print(self.user_id , self.auth_code , self.secret_key)
         checksum = hashlib.sha256(
