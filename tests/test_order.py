@@ -52,7 +52,13 @@ emit_signal({
     "quantity": 65,
     "security_id": "40760",
     "token": 54792,
-    "symbol": "NIFTY13APR2623500CE"
+    "symbol": "NIFTY21APR2623500CE",
+    "exchange": "NFO",
+    "expiry":"2026-04-21",
+    "strike":23500,
+    "zebusymbol":"NIFTY",
+    "is_ce":True,
+    "is_fno":True
 })
 
 loop.run_until_complete(asyncio.sleep(5))

@@ -29,7 +29,7 @@ async def zebu_order(user, signal):
             # build tsym
             expiry = signal["expiry"]  # "2026-04-13"
             strike = str(signal["strike"])
-            symbol = signal["symbol"]
+            symbol = signal["zebusymbol"]
             option_type = "C" if signal["is_ce"] else "P"
 
             # convert expiry → 13APR26
