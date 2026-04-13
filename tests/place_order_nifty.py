@@ -9,12 +9,12 @@ import hashlib
 
 # 🔐 FROM YOUR URL
 USER_ID = "2505610"
-AUTH_CODE = "LW7FGB52RS2N3BS9LBE4"
+AUTH_CODE = "33WHA8PJPWBJR7B35W58"
 SECRET_KEY = "5xWormtQR5tjK5ZB4Hcfksy3Z2LJ3WLHWBEjoyRegOdNOrp5lKEMOs0kyn3SQErcReitz7ZVmnEBJTJ1rTJE3sDdcCGlFIjJX7c3"   # from developer portal
 
 # 🎯 ORDER CONFIG
 SYMBOL = "NIFTY"
-EXPIRY = "2026-04-13"   # ✅ use what SDK returned earlier
+EXPIRY = "2026-04-21"   # ✅ use what SDK returned earlier
 STRIKE = "23500"
 QTY = 65
 
