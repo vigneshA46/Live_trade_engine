@@ -12,6 +12,7 @@ class AntBroker:
         self.session = None
 
     def login(self):
+        print(self.user_id , self.auth_code , self.secret_key)
         checksum = hashlib.sha256(
             (self.user_id + self.auth_code + self.secret_key).encode()
         ).hexdigest()
