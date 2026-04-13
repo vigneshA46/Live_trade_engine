@@ -58,7 +58,8 @@ emit_signal({
     "strike":23500,
     "zebusymbol":"NIFTY",
     "is_ce":True,
-    "is_fno":True
+    "is_fno":True,
+    "antsymbol":"NIFTY"
 })
 
 loop.run_until_complete(asyncio.sleep(5))

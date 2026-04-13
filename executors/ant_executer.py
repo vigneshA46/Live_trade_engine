@@ -31,7 +31,7 @@ async def ant_order(user, signal):
         if signal.get("is_fno"):
             instrument = adapter.get_fno_instrument(
                 exchange=exchange,
-                symbol=signal["symbol"],
+                symbol=signal["antsymbol"],
                 expiry=signal["expiry"],
                 strike=str(signal["strike"]),
                 is_ce=signal["is_ce"]
@@ -39,7 +39,7 @@ async def ant_order(user, signal):
         else:
             instrument = adapter.get_instrument(
                 exchange=exchange,
-                symbol=signal["symbol"]
+                symbol=signal["antsymbol"]
             )
 
         # 🛒 order
@@ -47,7 +47,7 @@ async def ant_order(user, signal):
             instrument=instrument,
             qty=qty,
             side=side,
-            tag=f"algo_{user['user_id']}"
+            tag=f"algo_123"
         )
 
         print(response)
