@@ -49,7 +49,7 @@ emit_signal({
     "strategy_id": strategy_id,
     "option": "CE",
     "side": "BUY",
-    "quantity": 65,
+    "quantity": "65",
     "security_id": "40760",
     "token": 54792,
     "symbol": "NIFTY21APR2624500CE",
