@@ -12,7 +12,7 @@ async def dhan_order(user, signal):
 
         adapter = DhanAdapter(
             client_id=creds["clientId"],
-            access_token=token   # you build this
+            access_token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzc2MzUwNDEyLCJpYXQiOjE3NzYyNjQwMTIsInRva2VuQ29uc3VtZXJUeXBlIjoiU0VMRiIsIndlYmhvb2tVcmwiOiIiLCJkaGFuQ2xpZW50SWQiOiIxMTA3NDI1Mjc1In0.KqQpGxQPsIxVULLdIAjA-GH9uAfoOoCIz37YtMyAwMqwEOmCm5WTP08bnqGJeTlOqlQCD9o7dYF5j6YR5KYM1w"   # you build this
         )
 
         qty = signal["quantity"] * user["multiplier"]
