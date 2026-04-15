@@ -41,7 +41,7 @@ class DhanAdapter:
         self,
         security_id: str,
         side,  # BUY / SELL
-        quantity: int,
+        quantity: str,
         exchange_segment: str = "NSE_FNO",
         product_type: str = "INTRADAY",
         order_type: str = "MARKET",
@@ -52,7 +52,7 @@ class DhanAdapter:
         security_id = security_id,   # Nifty PE (example)
         exchange_segment=dhan.NSE_FNO,
         transaction_type=getattr(dhan, side),
-        quantity=quantity,
+        quantity=str(quantity),
         order_type=dhan.MARKET,
         product_type=dhan.INTRA,
         price=0
