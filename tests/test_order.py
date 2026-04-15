@@ -50,7 +50,7 @@ emit_signal({
     "option": "CE",
     "side": "BUY",
     "quantity": "65",
-    "security_id": "40760",
+    "security_id": "63426",
     "token": 54792,
     "symbol": "NIFTY21APR2624500CE",
     "exchange": "NFO",
