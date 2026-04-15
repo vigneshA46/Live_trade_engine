@@ -52,7 +52,7 @@ emit_signal({
     "quantity": 65,
     "security_id": "40760",
     "token": 54792,
-    "symbol": "NIFTY21APR2623500CE",
+    "symbol": "NIFTY21APR2624500CE",
     "exchange": "NFO",
     "expiry":"2026-04-21",
     "strike":23500,
