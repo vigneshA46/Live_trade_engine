@@ -6,7 +6,7 @@ pyotp
 dhanhq
 dotenv
 psycopg2-binary
-SmartApi
+smartapi-python
 pycryptodome
 # -------- Dhan API / WebSocket --------
 websocket-client

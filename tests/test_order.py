@@ -40,7 +40,7 @@ from strategy_cache import load_users
 from signal_emitter import emit_signal
 from brokers.dhan import DhanAdapter
 
-strategy_id = "1fff432a-0411-40ff-aefd-c0b0026d5a6d"
+strategy_id = "617126ad-4197-4272-a08f-cc2ad43b3858"
 loop = asyncio.get_event_loop()
 
 load_users(strategy_id)
