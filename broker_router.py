@@ -9,6 +9,7 @@ from executors.ant_executer import ant_order
 
 async def route_signal(signal, users):
     tasks = []
+    print("USERS:")
     print("USERS: ",users)
 
     if "dhan" in users:
