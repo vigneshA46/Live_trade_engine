@@ -40,16 +40,47 @@ from strategy_cache import load_users
 from signal_emitter import emit_signal
 from brokers.dhan import DhanAdapter
 
+import requests
+
+
+
 strategy_id = "1fff432a-0411-40ff-aefd-c0b0026d5a6d"
 loop = asyncio.get_event_loop()
 
-load_users(strategy_id)
+def get_today_deployments():
+    url = https://algoapi.dreamintraders.in/api/deployments/today/{strategy_id}"
+
+    try:
+        response = requests.get(url, timeout=10)
+
+        # Raise error if status not 200
+        response.raise_for_status()
+
+        data = response.json()
+
+        # 👉 store in variable (this is what you asked)
+        user_deployments = data
+
+        return user_deployments
+
+    except requests.exceptions.RequestException as e:
+        print("API Error:", e)
+        return None
+
+
+# 🔥 usage
+deployments = get_today_deployments()
+
+print(deployments)
+
+
 
 emit_signal({
     "strategy_id": strategy_id,
+    "users":deployments,
     "option": "CE",
     "side": "BUY",
-    "quantity": "65",
+    "quantity": 65,
     "security_id": "63426",
     "token": 54792,
     "symbol": "NIFTY21APR2624500CE",
