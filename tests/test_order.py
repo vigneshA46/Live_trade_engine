@@ -76,6 +76,9 @@ def group_users_by_broker(deployments):
         return grouped
 
     for d in deployments:
+
+        if d["type"] == "paper":
+            continue
         broker = d.get("broker_name")
 
         if not broker:
