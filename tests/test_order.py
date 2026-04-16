@@ -69,17 +69,37 @@ def get_today_deployments():
         print("API Error:", e)
         return None
 
+def group_users_by_broker(deployments):
+    grouped = {}
 
-# 🔥 usage
+    if not deployments:
+        return grouped
+
+    for d in deployments:
+        broker = d.get("broker_name")
+
+        if not broker:
+            continue
+
+        if broker not in grouped:
+            grouped[broker] = []
+
+        grouped[broker].append(d)
+
+    return grouped
+
+
 deployments = get_today_deployments()
 
-print(deployments)
+users = group_users_by_broker(deployments)
+
+print("FORMATTED USERS:", users)
 
 
 
 emit_signal({
     "strategy_id": strategy_id,
-    "users":deployments,
+    "users":users,
     "option": "CE",
     "side": "BUY",
     "quantity": 65,
